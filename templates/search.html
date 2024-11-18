@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="search-container">
+        <div class="search-header" id="searchTerm">
+            Search Results for ""
+        </div>
+        <div class="results-count" style="display: none;">
+            {{ results|length }} result(s) found
+        </div>
+        <div class="results-container"></div>
+        <div class="no-results" style="display: none;">
+            No results found
+        </div>
+    </div>
+
+
+    <script>
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var term = urlParams.get('term');
+            if (term) {
+                fetchData(term);
+            }
+        };
+    </script>
+{% endblock %}

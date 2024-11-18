@@ -1,0 +1,939 @@
+body{
+    background-color: #fefaf5; /* Updated color */
+}
+
+.navbar {
+    background-color: #fefaf5; /* Updated color */
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    border: 2px solid #800020; /* Dark burgundy border */
+}
+
+.navbar img {
+    height: 100%;
+    max-width: 200px;
+    object-fit: scale-down;
+}
+/* Rest of your CSS code */
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+.wine-display a {
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.wine-display a:hover ~ .wine-display {
+    background-color: #feb5b5; /* Change this to the desired hover color */
+}
+.navbar form {
+    display: flex;
+    align-items: center;
+}
+
+.navbar input[type="text"] {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.navbar input[type="submit"] {
+    background-color: #c0c0c0; /* A silver color */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+#searchForm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchForm input[type="text"] {
+    padding: 5px; /* Adjust as needed */
+    width: 200px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    margin-left: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+}
+
+#searchForm input[type="text"]:focus {
+    border-color: #800020;
+}
+
+#searchForm input[type="submit"] {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background-color: #800020;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchForm input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.typing-text-style {
+    color: #800020; /* Dark burgundy color */
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    /* Add more styles as needed */
+    font-size: 5em; /* Adjust size as needed */
+    text-align: center;
+}
+
+results-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-design {
+    width: 100%; /* Adjust width as needed */
+    margin: auto; /* Centers the box horizontally */
+    padding: 10px; /* Adds space inside the box */
+    box-sizing: border-box; /* Makes sure the padding is included in the box's width */
+    display: flex; /* Makes the box a flex container */
+    justify-content: center; /* Centers the children horizontally */
+    align-items: center; /* Centers the children vertically */
+    height: 50vh; /* Makes the box as tall as the viewport */
+    border-bottom: #800020 2px solid; /* Dark burgundy border */
+    background-color: #fefaf5; 
+}
+
+.wine-image {
+    width: 10px; /* This will make the image width the same as its container */
+    height: auto; /* This will keep the aspect ratio of the image */
+}
+
+.intro-page-display{
+    display: flex;
+    align-items: center;
+}
+
+.wine-container{
+    display:flex;
+}
+
+
+.row-wine {
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+}
+
+.wine-display {
+    padding: 0;
+    border-right: 1px solid #800020;
+    border-left: 1px solid #800020;
+    border-bottom: 2px solid #800020;
+}
+
+.card, .card-body{
+    border: none;
+}
+
+.wine-display:first-child {
+    border-left: none;
+}
+
+.wine-display:last-child {
+    border-right: none;
+}
+
+.card {
+    background-color: #fefaf5; /* Change this to match your desired background color */
+    transition: background-color 0.3s ease;
+}
+
+.card:hover {
+    background-color: #feb5b5; /* Change this to the desired hover color */
+}
+
+/* Rest of your CSS... */
+
+.card-img-top {
+    width: 40px; /* Adjust this to change the size of the image */
+    height: auto; /* This will maintain the aspect ratio of the image */
+    object-fit: contain; /* This will prevent the image from being cropped */
+    margin: 0 auto; /* This will center the image */
+    padding-top: 20px; /* Add space above the image */
+    padding-bottom: 20px; /* Add space below the image */
+}
+
+.card:hover .card-header {
+    background-color: #feb5b5; /* Change this to the desired hover color */
+}
+
+.card-header{
+    background-color: #fefaf5; /* Change this to match your desired background color */
+    border: none; /* Remove the border */
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 20px;
+    color: #800020; /* Dark burgundy color */
+}
+
+#red-wine-name{
+    color: #800020; /* Dark burgundy color */
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 17px;
+    text-decoration: underline;
+}
+
+#white-wine-name{
+    color: #800020; /* Dark burgundy color */
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 17px;
+    text-decoration: underline;
+}
+
+#speciality-wine-name{
+    color: #800020; /* Dark burgundy color */
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 17px;
+    text-decoration: underline;
+
+}
+
+.slogan{
+    position: absolute;
+    color: #800020; /* Dark burgundy color */
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 20px;
+    text-align: center;
+    top: 760px;
+}
+
+
+.wine-pic-outer {
+    border-top: 2px solid #800020; /* Adjust as needed */
+    border-left: 2px solid #800020; /* Adjust as needed */
+    border-bottom: 2px solid #800020; /* Adjust as needed */
+    padding: 0; /* No padding */
+    height: 570px;
+    background-color: #f1eae3;
+}
+
+.wine-info-impo{
+    border-top: 2px solid #800020; /* Adjust as needed */
+    border-right: 2px solid #800020; /* Adjust as needed */
+    border-bottom: 2px solid #800020; /* Adjust as needed */
+    height: 570px;
+    background-color: #f1eae3;
+}
+
+.inner-frame {
+    border: 2px solid #800020; /* Adjust as needed */
+    margin-top: 50px; /* Small margin on all sides */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 50px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    background-color: #F6F3F0;
+    width: 250px; /* Specify a fixed width */
+    height: 450px; /* Specify a fixed height */
+}
+
+.id-container {
+    width: 90%; /* Set the width to 90% of the page width */
+    margin: 20px auto 0; /* Add 20px top margin */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    flex-direction: column; /* Stack the rows vertically */
+    background-color: #ffff; /* Updated color */
+}
+
+.group-one {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+}
+
+.wine-image-epic{
+    width: 100px;
+}
+
+
+.vineyard-impo{
+    margin-left: 20px;
+    margin-top: 70px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 20px;
+    color: #929292e1;
+    font-weight: bold;
+}
+
+.spillover{
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+.wine-name-year-impo{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 31px;
+    color: #800020; /* Dark burgundy color */
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.important-line-info{
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+}
+
+.region{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #929292e1;
+    text-decoration: underline;
+}
+
+.city{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #929292c6;
+    text-decoration: underline;
+}
+
+.display-type{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #929292c6;
+    text-decoration: underline;
+}
+
+.bullet-separator {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: flex-start; /* Align to the top */
+    justify-content: center;
+    margin-top: -3px;
+    color: #929292c6;
+}
+
+.flavors-section{
+    position: absolute;
+    top: 400px;
+    margin-left: 20px;
+}
+
+.flavor{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #800020;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.flavor-img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.img-emoticon{
+    width: 23px;
+    height: 23px;
+    margin-right:20px;
+}
+
+
+.group-two {
+    display: flex; /* Use flexbox */
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    padding-bottom: 100px;
+}
+
+.fact-small {
+    display: flex;
+    align-items: center;
+    justify-content: max-content;
+    border-bottom: 1px solid #000000;
+    padding-left: -10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 95%; /* Adjust as needed */
+    margin: 0 auto; /* Center the element */
+}
+
+.fact-small:last-child{
+    border-bottom: none;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.fact-info{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 14px;
+    color: rgb(75, 75, 75);
+    padding-left: 50px;
+    margin-right: -65px;
+}
+
+.fact-title{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 14px;
+    color: rgb(75, 75, 75);
+}
+
+
+
+.title-g2{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-left: 22px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 20px;
+    color: rgb(75, 75, 75);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.search-container{
+    margin-top: 30px;
+    margin-right: 30px; 
+    margin-left: 30px;
+}
+
+.search-header{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 30px;
+    color: #800020; /* Dark burgundy color */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.no-results{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #800020; /* Dark burgundy color */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.results-count{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #800020; /* Dark burgundy color */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.results-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 10px;
+    flex-wrap: wrap;
+}
+
+
+.search-container{
+    padding-bottom: 50px;
+}
+
+.search-result{
+    display: flex;
+    border: 2px solid #800020; /* Dark burgundy border */
+    height: 300px;
+    background-color: #f1eae3;
+    box-sizing: border-box; /* Add this line */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.image-padder{
+    margin: 20px;
+    border: #800020 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 255px;
+    background-color: #F6F3F0;
+}
+
+.wine-image-search{
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-name{
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 25px;
+    padding-right: 15px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 18px;
+    color: #800020; /* Dark burgundy color */
+    font-weight: bold;
+}
+
+.search-matches{
+    margin-left: 10px;
+}
+
+.add-button{
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background-color: #800020;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+.match{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 14px;
+    color: #800020; /* Dark burgundy color */
+    margin-right: 20px;
+    padding-right: 25px;
+}
+
+.results-container a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-result:hover {
+    background-color: rgb(252, 179, 179);
+}
+
+.fact-info a {
+    color: #000; /* Change this to match your desired link color */
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.logo-click{
+    width: 0%;
+    margin: 0 auto;
+    padding-right: 90px;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.add-form {
+    width: 80%;
+    margin: auto;
+}
+
+
+.form-container{
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fieldset-basic{
+    border: 2px solid #800020; /* Dark burgundy border */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.fieldset-basic label {
+    flex: 1;
+}
+
+.fieldset-basic input {
+    flex: 2;
+}
+
+.add-form{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.legend{
+    padding-left: 10px;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    color: #800020; /* Dark burgundy color */
+    font-size: 20px;
+    text-decoration: underline;
+    padding-top:10px;
+    font-weight: bold;
+}
+
+.next-line{
+    padding-top: 10px;
+    display:flex;
+    padding-bottom: 10px;
+}
+
+.next-line-bottom{
+    padding-top: 10px;
+    display:flex;
+    padding-bottom: 10px;
+}
+
+.invalid {
+    border-color: red !important;
+    border-width: 3px !important;
+}
+
+.enter-name{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #800020;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.enter-year{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    padding-left: 20px;
+    color: #800020;
+    font-weight: bold;
+}
+
+.enter-display{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    padding-left: 20px;
+    color: #800020;
+    font-weight: bold;
+}
+
+.highlight {
+    text-decoration: underline;
+}
+
+
+.enter-winestyle{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    padding-left: 20px;
+    color: #800020;
+    font-weight: bold;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="number"]:focus, input[type="url"]:focus, textarea:focus {
+    border-color: #800020;
+    outline: none;
+}
+
+
+.enter-region{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #800020;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+
+.enter-subregion{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    padding-left: 30px;
+    color: #800020;
+    font-weight: bold;
+}
+
+
+.enter-city{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    padding-left: 30px;
+    color: #800020;
+    font-weight: bold;
+}
+
+.enter-imageurl{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #800020;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+
+.enter-alchcont{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    padding-left: 30px;
+    color: #800020;
+    font-weight: bold;
+}
+
+
+.enter-winery{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    padding-left: 30px;
+    color: #800020;
+    font-weight: bold;
+}
+
+.flavor label{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #800020;
+    font-weight: bold;
+    padding-right: 10px;
+    margin-right: 20px;
+}
+
+.enter-flavor label {
+    margin-right: 15px;
+}
+
+.flavor option{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #800020;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-top: 15px;
+}
+
+.new-item-created{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #c0c0c0;
+    font-weight: bold;
+    padding-right: 10px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.new-item-created a{
+    color: rgb(98, 98, 98);
+    text-decoration: underline;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+
+.enter-flavor{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    padding-left: 10px;
+    color: #800020;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.enter-allergens{
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    padding-left: 10px;
+    color: #800020;
+    font-weight: bold;
+    display: flex;
+}
+
+.option-checkbox{
+    padding-right: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.yesorno{
+    padding-right: 5px;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    margin-right: 10px;
+}
+
+.option-checkbox input[type="radio"]:checked + label:before {
+    background-color: #800020; /* Burgundy red background */
+}
+
+
+.enter-description{
+    display: flex;
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 16px;
+    color: #800020;
+    padding-left: 10px;
+    font-weight: bold;
+    align-items: flex-start;
+    padding-bottom: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#description {
+    width: 800px;
+    resize: none;
+    height: 62px;
+}
+
+.header-for-form{
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+    font-size: 50px;
+    color: #800020; /* Dark burgundy color */
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.add-wine-button-epic{
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: #800020;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+}
+
+.add-wine-button-epic:hover {
+    background-color: #0056b3;
+}
+
+.lol-wine-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.button-wrapper-monkey{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.edit-wine-button-epic{
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: #1f551f;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    margin-right: 30px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+}
+
+.edit-wine-button-epic:hover {
+    background-color: #30bd20;
+}
+
+.discard-changes-button-epic{
+    margin-left: 50px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: #800020;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+}
+
+.discard-changes-button-epic:hover {
+    background-color: #ff0000;
+}
+
+.edit-button-on-view{
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.the-goat-lebron{
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: #d4d4d4;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    margin-right: 30px;
+    font-family: 'Courier New', Courier, monospace; /* Change the font */
+}
+
+.the-goat-lebron:hover {
+    background-color: #30bd20;
+}

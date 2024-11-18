@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="new-item-created"></div>
+<div class="form-container">
+    <div class="header-for-form">
+        Uncork Your Discovery!
+    </div>
+    <!--- Im going to insert the click button thing here  -->
+    <form class="add-form" action="/add_wine" method="post">
+        <fieldset class="fieldset-basic">
+            <div class="legend">
+                <legend class="underline">Basic Information</legend>
+            </div>
+            <div class="next-line">
+                <div class="enter-name">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="enter-year">
+                    <label for="year">Year:</label>
+                    <input type="number" id="year" name="year">
+                </div>
+                <div class="enter-display">
+                    <label for="displayname">Display Name:</label>
+                    <input type="text" id="displayname" name="displayname">
+                </div>
+                <div class="enter-winestyle">
+                    <label for="winestyle">Wine Style:</label>
+                    <input type="text" id="winestyle" name="winestyle">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="fieldset-basic flavor-town-bitches">
+            <div class="legend">
+                <legend class="underline">Flavor Profile</legend>
+            </div>
+            <div class="next-line flavortown"></div>
+        </fieldset>
+        
+
+        <fieldset class="fieldset-basic">
+            <div class="legend">
+                <legend class="underline">Location</legend>
+            </div>
+            <div class="next-line">
+                <div class="enter-region">
+                    <label for="name">Region:</label>
+                    <input type="text" id="region" name="region">
+                </div>
+                <div class="enter-subregion">
+                    <label for="year">Subregion:</label>
+                    <input type="text" id="subregion" name="subregion">
+                </div>
+                <div class="enter-city">
+                    <label for="displayname">City:</label>
+                    <input type="text" id="city" name="city">
+                </div>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="fieldset-basic">
+            <div class="legend">
+                <legend class="underline">Other Details</legend>
+            </div>
+            <div class="next-line">
+                <div class="enter-imageurl">
+                    <label for="name">Image URL:</label>
+                    <input type="url" id="image" name="image">
+                </div>
+                <div class="enter-alchcont">
+                    <label for="year">Alcohol Content:</label>
+                    <input type="text" id="alcohol_content" name="alcohol_content" pattern="\d+(\.\d{1})?">
+                </div>
+                <div class="enter-winery">
+                    <label for="winery">Winery:</label>
+                    <input type="text" id="winery" name="winery">
+                </div>
+            </div>
+            <div class="next-line">
+                <div class="enter-allergens">
+                    Enter Allergens:
+                    <div class="option-checkbox">
+                        <label class="yesorno" for="yes">Yes </label>
+                        <input class="check" type="radio" id="yes" name="allergens" value="Contains sulfites">
+                    </div>
+                    <div class="option-checkbox">
+                        <label class="yesorno" for="no">No </label>
+                        <input class="check" type="radio" id="no" name="allergens" value="Does not contain sulfites">
+                    </div>
+                </div>
+            </div>
+            <div class="next-line-last">
+                <div class="enter-description">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="lol-wine-button">
+            <input class="add-wine-button-epic" type="submit" value="Add Wine To Collection">
+        </div>
+    </form>
+</div>
+
+<script src="{{ url_for('static', filename='add.js') }}"></script>
+{% endblock %}

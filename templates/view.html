@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #ffff; /* Replace with your color */
+    }
+</style>
+
+
+<div class="id-container">
+    <div class="row group-one">
+        <div class="col-md-4 wine-pic-outer">
+            <div class="inner-frame">
+                <img src="{{ wine.image }}" alt="Wine image" class="wine-image-epic">            
+            </div>
+        </div>
+        <div class="col-md-4 wine-info-impo">
+            <div class="vineyard-impo">
+                {{ wine.winery }}
+            </div>
+            <div class="wine-name-year-impo">
+                {{ wine.name }} {{ wine.year }}
+            </div>
+            <div class="important-line-info">
+                <a href="/search?term={{wine.region}}">
+                    <div class="region">
+                        {{ wine.region }}
+                    </div>
+                </a>
+                <div class="bullet-separator">•</div>
+                <a href="/search?term={{wine.city}}">
+                    <div class="city">
+                        {{ wine.city }}
+                    </div>
+                </a>
+                <div class="bullet-separator">•</div>
+                <a href="/search?term={{wine.displayname}}">
+                    <div class="display-type">
+                        {{ wine.displayname }}
+                    </div>
+                </a>
+            </div>
+            <div class="flavors-section">
+                {% for flavor, image in wine.flavorprofile.items()|sort %}
+                    <div class="flavor">
+                        <img src="{{ url_for('static', filename=image) }}" class="flavor-img" alt="{{ flavor }} Emoticon">
+                        {{ flavor }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row group-two">
+        <div class="col-md-8">
+            <div class="title-g2">
+                Facts of Wine:
+            </div>
+            <div class="fact-small">
+                <div class="col-md-5 spillover">
+                    <img src="{{ url_for('static', filename='images/emoticons/winery.png') }}" class="img-emoticon" alt="winery" >
+                    <div class="fact-title">
+                        Winery
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a href="/search?term={{wine.winery}}">
+                        <div class="fact-info">
+                            <span class="underline">{{ wine.winery }}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="fact-small">
+                <div class="col-md-5 spillover">
+                    <img src="{{ url_for('static', filename='images/emoticons/winestyle.png') }}" class="img-emoticon" alt="Wine Style Emoticon" >
+                    <div class="fact-title">
+                        Wine Style
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fact-info">
+                        <a href="/search?term={{ wine.winestyle }}">
+                            <span class="underline">{{ wine.winestyle }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="fact-small">
+                <div class="col-md-5 spillover">
+                    <img src="{{ url_for('static', filename='images/emoticons/region.png') }}" class="img-emoticon" alt="Region Emoticon" >
+                    <div class="fact-title">
+                        Region
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fact-info">
+                        <a href="/search?term={{wine.region}}">
+                            <span class="underline">{{ wine.region }}</span>
+                        </a> / 
+                        <a href="/search?term={{wine.subregion}}">
+                            <span class="underline">{{wine.subregion}}</span>
+                        </a> / 
+                        <a href="/search?term={{wine.city}}">
+                            <span class="underline">{{wine.city}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="fact-small">
+                <div class="col-md-5 spillover">
+                    <img src="{{ url_for('static', filename='images/emoticons/alchcontent.png') }}" class="img-emoticon" alt="Alcohol Content Emoticon" >
+                    <div class="fact-title">
+                        Alcohol Content
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fact-info">
+                        {{ wine.alcohol_content }}%
+                    </div>
+                </div>
+            </div>
+            <div class="fact-small">
+                <div class="col-md-5 spillover">
+                    <img src="{{ url_for('static', filename='images/emoticons/allergens.png') }}" class="img-emoticon" alt="Allergens Emoticon" >
+                    <div class="fact-title">
+                        Allergens
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fact-info">
+                        {{ wine.allergens }}
+                    </div>
+                </div>
+            </div>
+            <div class="fact-small">
+                <div class="col-md-5 spillover">
+                    <img src="{{ url_for('static', filename='images/emoticons/description.png') }}" class="img-emoticon" alt="Description Emoticon" >
+                    <div class="fact-title">
+                        Description
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fact-info">
+                        {{ wine.description }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="edit-button-on-view">
+            <a href="/edit/{{wine.id}}">
+                <button class="the-goat-lebron" type="button">Edit</button>
+            </a>        
+        </div>
+    </div>
+</div>
+
+{% endblock %}

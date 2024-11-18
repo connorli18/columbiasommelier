@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="form-container" data-wine='{{ wine | tojson | safe }}'>
+    <div class="header-for-form">
+        Revise, Relish, Raise a Glass!    
+    </div>
+
+    <!--- Im going to insert the click button thing here  -->
+    <form class="add-form" action="/edit_wine" method="post">
+        <fieldset class="fieldset-basic">
+            <div class="legend">
+                <legend class="underline">Basic Information</legend>
+            </div>
+            <div class="next-line">
+                <div class="enter-name">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value = "{{wine.name}}">
+                </div>
+                <div class="enter-year">
+                    <label for="year">Year:</label>
+                    <input type="number" id="year" name="year" value = "{{wine.year}}">
+                </div>
+                <div class="enter-display">
+                    <label for="displayname">Display Name:</label>
+                    <input type="text" id="displayname" name="displayname" value = "{{wine.displayname}}">
+                </div>
+                <div class="enter-winestyle">
+                    <label for="winestyle">Wine Style:</label>
+                    <input type="text" id="winestyle" name="winestyle" value = "{{wine.winestyle}}">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="fieldset-basic flavor-town-bitches">
+            <div class="legend">
+                <legend class="underline">Flavor Profile</legend>
+            </div>
+            <div class="next-line flavortown"></div>
+        </fieldset>
+        
+
+        <fieldset class="fieldset-basic">
+            <div class="legend">
+                <legend class="underline">Location</legend>
+            </div>
+            <div class="next-line">
+                <div class="enter-region">
+                    <label for="name">Region:</label>
+                    <input type="text" id="region" name="region" value ="{{ wine.region }}">
+                </div>
+                <div class="enter-subregion">
+                    <label for="year">Subregion:</label>
+                    <input type="text" id="subregion" name="subregion" value="{{ wine.subregion }}">
+                </div>
+                <div class="enter-city">
+                    <label for="displayname">City:</label>
+                    <input type="text" id="city" name="city" value="{{wine.city}}">
+                </div>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="fieldset-basic">
+            <div class="legend">
+                <legend class="underline">Other Details</legend>
+            </div>
+            <div class="next-line">
+                <div class="enter-imageurl">
+                    <label for="name">Image URL:</label>
+                    <input type="url" id="image" name="image" value="{{wine.image}}">
+                </div>
+                <div class="enter-alchcont">
+                    <label for="year">Alcohol Content:</label>
+                    <input type="text" id="alcohol_content" name="alcohol_content" value="{{wine.alcohol_content}}" pattern="\d+(\.\d{1})?">                </div>
+                <div class="enter-winery">
+                    <label for="winery">Winery:</label>
+                    <input type="text" id="winery" name="winery" value="{{wine.winery}}">
+                </div>
+            </div>
+            <div class="next-line">
+                <div class="enter-allergens">
+                    Enter Allergens:
+                    <div class="option-checkbox">
+                        <label class="yesorno" for="yes">Yes </label>
+                        <input class="check" type="radio" id="yes" name="allergens" value="Contains sulfites" {% if wine.allergens == "Contains sulfites" %}checked{% endif %}>
+                    </div>
+                    <div class="option-checkbox">
+                        <label class="yesorno" for="no">No </label>
+                        <input class="check" type="radio" id="no" name="allergens" value="Does not contain sulfites" {% if wine.allergens != "Contains sulfites" %}checked{% endif %}>
+                    </div>
+                </div>
+            </div>
+            <div class="next-line-last">
+                <div class="enter-description">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description">{{wine.description}}</textarea>
+                </div>
+            </div>
+        </fieldset>
+        <div class="button-wrapper-monkey">
+            <input class="edit-wine-button-epic" type="submit" value="Confirm Edit">
+            <a href="#" class="discard-changes-button-epic" onclick="discardChanges({{ wine.id }})">Discard Changes</a>
+        </div>
+        
+    </form>
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='edit.js') }}"></script>
+{% endblock %}
